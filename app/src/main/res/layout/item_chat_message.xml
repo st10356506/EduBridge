@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Badge Icon -->
+        <TextView
+            android:id="@+id/badge_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="📊"
+            android:textSize="32sp" />
+
+        <!-- Badge Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/badge_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:text="Math Master"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/badge_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Complete 10 math activities"
+                android:textColor="@color/muted_foreground"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Badge Tags -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/badge_rarity"
+                style="@style/Widget.Material3.Chip.Assist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="common"
+                android:textSize="8sp"
+                app:chipBackgroundColor="@color/gray_100" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/badge_points"
+                style="@style/Widget.Material3.Chip.Assist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100 pts"
+                android:textSize="8sp" />
+        </LinearLayout>
+
+        <!-- Progress (for unearned badges) -->
+        <LinearLayout
+            android:id="@+id/badge_progress_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/badge_progress"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginBottom="4dp"
+                android:max="100"
+                android:progress="64" />
+
+            <TextView
+                android:id="@+id/badge_progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="32/50"
+                android:textColor="@color/muted_foreground"
+                android:textSize="8sp" />
+        </LinearLayout>
+
+        <!-- Earned Trophy -->
+        <ImageView
+            android:id="@+id/badge_trophy"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_trophy"
+            android:visibility="visible"
+            app:tint="@color/green_600" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

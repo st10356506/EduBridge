@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- Primary Brand Colors (from globals.css) -->
+    <color name="primary">#030213</color>
+    <color name="primary_foreground">#FFFFFF</color>
+    <color name="secondary">#F2F2F7</color>
+    <color name="secondary_foreground">#030213</color>
+
+    <!-- Background Colors -->
+    <color name="background">#FFFFFF</color>
+    <color name="foreground">#1F1F1F</color> <!-- oklch(0.145 0 0) converted -->
+
+    <!-- Card Colors -->
+    <color name="card">#FFFFFF</color>
+    <color name="card_foreground">#1F1F1F</color>
+
+    <!-- Muted Colors -->
+    <color name="muted">#ECECF0</color>
+    <color name="muted_foreground">#717182</color>
+
+    <!-- Border and Input -->
+    <color name="border">#1A000000</color> <!-- rgba(0, 0, 0, 0.1) -->
+    <color name="input_background">#F3F3F5</color>
+    <color name="switch_background">#CBCED4</color>
+
+    <!-- Accent Colors -->
+    <color name="accent">#E9EBEF</color>
+    <color name="accent_foreground">#030213</color>
+
+    <!-- Destructive Colors -->
+    <color name="destructive">#D4183D</color>
+    <color name="destructive_foreground">#FFFFFF</color>
+
+    <!-- Gray Scale Palette -->
+    <color name="gray_50">#F9FAFB</color>
+    <color name="gray_100">#F3F4F6</color>
+    <color name="gray_200">#E5E7EB</color>
+    <color name="gray_300">#D1D5DB</color>
+    <color name="gray_400">#9CA3AF</color>
+    <color name="gray_500">#6B7280</color>
+    <color name="gray_600">#4B5563</color>
+    <color name="gray_700">#374151</color>
+    <color name="gray_800">#1F2937</color>
+    <color name="gray_900">#111827</color>
+
+    <!-- Blue Colors (for gradients and accents) -->
+    <color name="blue_50">#EFF6FF</color>
+    <color name="blue_100">#DBEAFE</color>
+    <color name="blue_200">#BFDBFE</color>
+    <color name="blue_300">#93C5FD</color>
+    <color name="blue_400">#60A5FA</color>
+    <color name="blue_500">#3B82F6</color>
+    <color name="blue_600">#2563EB</color>
+    <color name="blue_700">#1D4ED8</color>
+    <color name="blue_800">#1E40AF</color>
+    <color name="blue_900">#1E3A8A</color>
+
+    <!-- Purple Colors (for gradients and accents) -->
+    <color name="purple_50">#FAF5FF</color>
+    <color name="purple_100">#F3E8FF</color>
+    <color name="purple_200">#E9D5FF</color>
+    <color name="purple_300">#D8B4FE</color>
+    <color name="purple_400">#C084FC</color>
+    <color name="purple_500">#A855F7</color>
+    <color name="purple_600">#9333EA</color>
+    <color name="purple_700">#7C3AED</color>
+    <color name="purple_800">#6B21A8</color>
+    <color name="purple_900">#581C87</color>
+
+    <!-- Green Colors (for success states) -->
+    <color name="green_50">#F0FDF4</color>
+    <color name="green_100">#DCFCE7</color>
+    <color name="green_200">#BBF7D0</color>
+    <color name="green_300">#86EFAC</color>
+    <color name="green_400">#4ADE80</color>
+    <color name="green_500">#22C55E</color>
+    <color name="green_600">#16A34A</color>
+    <color name="green_700">#15803D</color>
+    <color name="green_800">#166534</color>
+    <color name="green_900">#14532D</color>
+
+    <!-- Orange Colors (for warnings and highlights) -->
+    <color name="orange_50">#FFF7ED</color>
+    <color name="orange_100">#FFEDD5</color>
+    <color name="orange_200">#FED7AA</color>
+    <color name="orange_300">#FDBA74</color>
+    <color name="orange_400">#FB923C</color>
+    <color name="orange_500">#F97316</color>
+    <color name="orange_600">#EA580C</color>
+    <color name="orange_700">#C2410C</color>
+    <color name="orange_800">#9A3412</color>
+    <color name="orange_900">#7C2D12</color>
+
+    <!-- Yellow Colors (for rewards, crowns, and highlights) -->
+    <color name="yellow_50">#FFFBEB</color>
+    <color name="yellow_100">#FEF3C7</color>
+    <color name="yellow_200">#FDE68A</color>
+    <color name="yellow_300">#FCD34D</color>
+    <color name="yellow_400">#FBBF24</color>
+    <color name="yellow_500">#F59E0B</color>
+    <color name="yellow_600">#D97706</color>
+    <color name="yellow_700">#B45309</color>
+    <color name="yellow_800">#92400E</color>
+    <color name="yellow_900">#78350F</color>
+
+    <!-- Red Colors (for errors) -->
+    <color name="red_50">#FEF2F2</color>
+    <color name="red_100">#FEE2E2</color>
+    <color name="red_200">#FECACA</color>
+    <color name="red_300">#FCA5A5</color>
+    <color name="red_400">#F87171</color>
+    <color name="red_500">#EF4444</color>
+    <color name="red_600">#DC2626</color>
+    <color name="red_700">#B91C1C</color>
+    <color name="red_800">#991B1B</color>
+    <color name="red_900">#7F1D1D</color>
+
+    <!-- Chart Colors (from globals.css) -->
+    <color name="chart_1">#FF8A65</color> <!-- oklch(0.646 0.222 41.116) approximation -->
+    <color name="chart_2">#4FC3F7</color> <!-- oklch(0.6 0.118 184.704) approximation -->
+    <color name="chart_3">#81C784</color> <!-- oklch(0.398 0.07 227.392) approximation -->
+    <color name="chart_4">#FFB74D</color> <!-- oklch(0.828 0.189 84.429) approximation -->
+    <color name="chart_5">#A1C181</color> <!-- oklch(0.769 0.188 70.08) approximation -->
+
+    <!-- EduBridge Specific Colors -->
+    <color name="edubridge_blue">#2563EB</color> <!-- Primary blue for brand -->
+    <color name="edubridge_purple">#9333EA</color> <!-- Primary purple for brand -->
+    <color name="edubridge_gradient_start">#2563EB</color> <!-- Blue 600 -->
+    <color name="edubridge_gradient_end">#9333EA</color> <!-- Purple 600 -->
+
+    <!-- Subject Colors -->
+    <color name="mathematics_primary">#2563EB</color> <!-- Blue for Mathematics -->
+    <color name="english_primary">#16A34A</color> <!-- Green for English -->
+    <color name="science_primary">#9333EA</color> <!-- Purple for Science -->
+    <color name="social_studies_primary">#EA580C</color> <!-- Orange for Social Studies -->
+
+    <!-- Progress and Status Colors -->
+    <color name="progress_easy">#22C55E</color> <!-- Green 500 -->
+    <color name="progress_medium">#F97316</color> <!-- Orange 500 -->
+    <color name="progress_hard">#EF4444</color> <!-- Red 500 -->
+
+    <!-- Surface Colors -->
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F1F5F9</color>
+    <color name="on_surface">#1F2937</color>
+    <color name="on_surface_variant">#64748B</color>
+
+    <!-- Overlay Colors -->
+    <color name="overlay_light">#26000000</color> <!-- 15% black -->
+    <color name="overlay_medium">#40000000</color> <!-- 25% black -->
+    <color name="overlay_dark">#66000000</color> <!-- 40% black -->
+
+    <!-- Dark Theme Colors -->
+    <color name="dark_background">#1F1F1F</color> <!-- oklch(0.145 0 0) -->
+    <color name="dark_foreground">#FAFAFA</color> <!-- oklch(0.985 0 0) -->
+    <color name="dark_card">#1F1F1F</color>
+    <color name="dark_card_foreground">#FAFAFA</color>
+    <color name="dark_primary">#FAFAFA</color>
+    <color name="dark_primary_foreground">#1A1A1A</color>
+    <color name="dark_secondary">#404040</color> <!-- oklch(0.269 0 0) -->
+    <color name="dark_secondary_foreground">#FAFAFA</color>
+    <color name="dark_muted">#404040</color>
+    <color name="dark_muted_foreground">#A1A1A1</color> <!-- oklch(0.708 0 0) -->
+    <color name="dark_accent">#404040</color>
+    <color name="dark_accent_foreground">#FAFAFA</color>
+    <color name="dark_border">#404040</color>
+    <color name="dark_input">#404040</color>
+
+    <!-- Status Bar and System UI -->
+    <color name="status_bar_light">#030213</color>
+    <color name="status_bar_dark">#1F1F1F</color>
+    <color name="navigation_bar_light">#FFFFFF</color>
+    <color name="navigation_bar_dark">#1F1F1F</color>
+
+    <!-- Chip and Tag Colors -->
+    <color name="chip_easy_bg">#22C55E1A</color> <!-- 10% green -->
+    <color name="chip_medium_bg">#F973161A</color> <!-- 10% orange -->
+    <color name="chip_hard_bg">#EF44441A</color> <!-- 10% red -->
+    <color name="chip_easy_text">#15803D</color>
+    <color name="chip_medium_text">#C2410C</color>
+    <color name="chip_hard_text">#B91C1C</color>
+
+    <!-- Button State Colors -->
+    <color name="button_pressed">#F3F4F6</color>
+    <color name="button_focused">#E5E7EB</color>
+    <color name="button_disabled">#F9FAFB</color>
+    <color name="button_disabled_text">#D1D5DB</color>
+
+    <!-- Progress Bar Colors -->
+    <color name="progress_track">#E5E7EB</color>
+    <color name="progress_indicator">#2563EB</color>
+    <color name="progress_background">#F3F4F6</color>
+
+    <!-- Rewards System Specific Colors -->
+    <color name="reward_crown_bg">#FBBF24</color> <!-- Yellow 400 for crown backgrounds -->
+    <color name="reward_crown_icon">#92400E</color> <!-- Yellow 800 for crown icons -->
+    <color name="reward_points_bg">#FEF3C7</color> <!-- Yellow 100 for point backgrounds -->
+    <color name="reward_points_text">#D97706</color> <!-- Yellow 600 for point text -->
+    <color name="reward_level_progress">#F59E0B</color> <!-- Yellow 500 for level progress -->
+    <color name="reward_streak_bg">#FFFBEB</color> <!-- Yellow 50 for streak backgrounds -->
+    <color name="reward_streak_text">#B45309</color> <!-- Yellow 700 for streak text -->
+
+    <!-- Level and Achievement Colors -->
+    <color name="level_background">#FEF3C7</color> <!-- Yellow 100 for level cards -->
+    <color name="level_border">#FCD34D</color> <!-- Yellow 300 for level borders -->
+    <color name="achievement_gold">#FBBF24</color> <!-- Yellow 400 for gold achievements -->
+    <color name="achievement_gold_text">#78350F</color> <!-- Yellow 900 for gold text -->
+
+    <!-- Badge Rarity Colors -->
+    <color name="badge_common_bg">#F3F4F6</color> <!-- Gray 100 for common badges -->
+    <color name="badge_common_text">#6B7280</color> <!-- Gray 500 for common text -->
+    <color name="badge_uncommon_bg">#DCFCE7</color> <!-- Green 100 for uncommon badges -->
+    <color name="badge_uncommon_text">#166534</color> <!-- Green 800 for uncommon text -->
+    <color name="badge_rare_bg">#DBEAFE</color> <!-- Blue 100 for rare badges -->
+    <color name="badge_rare_text">#1E40AF</color> <!-- Blue 800 for rare text -->
+    <color name="badge_epic_bg">#F3E8FF</color> <!-- Purple 100 for epic badges -->
+    <color name="badge_epic_text">#6B21A8</color> <!-- Purple 800 for epic text -->
+    <color name="badge_legendary_bg">#FEF3C7</color> <!-- Yellow 100 for legendary badges -->
+    <color name="badge_legendary_text">#92400E</color> <!-- Yellow 800 for legendary text -->
+
+    <!-- Gradient Endpoint Colors -->
+    <color name="gradient_yellow_start">#FEF3C7</color> <!-- Yellow 100 -->
+    <color name="gradient_yellow_end">#FFEDD5</color> <!-- Orange 100 -->
+    <color name="gradient_reward_start">#FFFBEB</color> <!-- Yellow 50 -->
+    <color name="gradient_reward_end">#FFF7ED</color> <!-- Orange 50 -->
+</resources>
