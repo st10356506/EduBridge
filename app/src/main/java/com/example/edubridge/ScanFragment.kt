@@ -74,7 +74,7 @@ class ScanFragment : Fragment() {
             val image = InputImage.fromBitmap(bitmap, 0)
             recognizeText(image)
         } catch (e: Exception) {
-            Toast.makeText(requireContext(), "Error loading picture", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Error loading image", Toast.LENGTH_SHORT).show()
         }
     }
 
