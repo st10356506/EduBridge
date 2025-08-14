@@ -18,10 +18,9 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
         buildConfig = true
-        
     }
 
     buildTypes {
@@ -33,17 +32,35 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
 }
 
+val camerax_version = "1.3.0"
+
 dependencies {
 
+    implementation ("androidx.camera:camera-core:$camerax_version")
+    implementation ("androidx.camera:camera-camera2:$camerax_version")
+    implementation ("androidx.camera:camera-lifecycle:$camerax_version")
+    implementation ("androidx.camera:camera-view:1.3.0")
+    implementation ("androidx.camera:camera-extensions:1.3.0")
+
+    // ML Kit Text Recognition
+    implementation ("com.google.mlkit:text-recognition:16.0.0")
+
+    // Firebase BoM
+    implementation (platform("com.google.firebase:firebase-bom:33.1.2"))
+    implementation ("com.google.firebase:firebase-analytics")
+
+    // AndroidX + Material
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -51,12 +68,18 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.foundation.android)
     implementation(libs.firebase.database)
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     // import Kotlin API client BOM
     //implementation (libs.openai.client.bom)
     // define dependencies without versions
-   // implementation (libs.openai.client)
-   // runtimeOnly (libs.ktor.client.okhttp)
+    // implementation (libs.openai.client)
+    // runtimeOnly (libs.ktor.client.okhttp)
 }
+
+
+
+
