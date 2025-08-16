@@ -60,6 +60,9 @@ dependencies {
     implementation (platform("com.google.firebase:firebase-bom:33.1.2"))
     implementation ("com.google.firebase:firebase-analytics")
 
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+    implementation("androidx.fragment:fragment-ktx:1.8.2")
+    implementation ("com.google.android.material:material:1.9.0")
     // AndroidX + Material
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

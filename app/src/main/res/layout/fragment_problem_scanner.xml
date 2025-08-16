@@ -14,7 +14,6 @@
         android:orientation="vertical"
         android:paddingVertical="16dp">
 
-        <!-- Header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,7 +39,6 @@
                 android:textSize="14sp" />
         </LinearLayout>
 
-        <!-- Scanner Interface Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/scanner_interface_card"
             android:layout_width="match_parent"
@@ -56,7 +54,6 @@
                 android:orientation="vertical"
                 android:padding="24dp">
 
-                <!-- Scanning Animation/Icon -->
                 <FrameLayout
                     android:layout_width="96dp"
                     android:layout_height="96dp"
@@ -78,7 +75,6 @@
                             app:tint="@color/gray_400" />
                     </androidx.cardview.widget.CardView>
 
-                    <!-- Loading Progress (Initially Hidden) -->
                     <ProgressBar
                         android:id="@+id/scanning_progress"
                         style="?android:attr/progressBarStyleLarge"
@@ -87,7 +83,6 @@
                         android:visibility="gone" />
                 </FrameLayout>
 
-                <!-- Status Text -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -114,7 +109,6 @@
                         android:textSize="12sp" />
                 </LinearLayout>
 
-                <!-- Action Buttons -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -144,7 +138,41 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Scanned Problem Result (Initially Hidden) -->
+        <LinearLayout
+            android:id="@+id/upload_preview_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Preview and Upload"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgPreview"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:contentDescription="Scanned Image Preview"
+                android:scaleType="fitCenter" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Upload to Firebase"
+                android:textAllCaps="false"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_upload" />
+        </LinearLayout>
+
         <LinearLayout
             android:id="@+id/scanned_result_container"
             android:layout_width="match_parent"
@@ -152,7 +180,6 @@
             android:orientation="vertical"
             android:visibility="gone">
 
-            <!-- Problem Detection Card -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -166,7 +193,6 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Header -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -206,7 +232,6 @@
                             android:textSize="10sp" />
                     </LinearLayout>
 
-                    <!-- Problem Display -->
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -260,7 +285,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Solution Card -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -274,7 +298,6 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Solution Header -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -297,7 +320,6 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
-                    <!-- Answer Box -->
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -333,7 +355,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Solution Steps Header -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -356,7 +377,6 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
-                    <!-- Solution Steps RecyclerView -->
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/solution_steps_recycler"
                         android:layout_width="match_parent"
@@ -366,7 +386,6 @@
                         tools:itemCount="4"
                         tools:listitem="@layout/item_solution_step" />
 
-                    <!-- Action Buttons -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -397,7 +416,6 @@
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
 
-        <!-- Recent Scans Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
