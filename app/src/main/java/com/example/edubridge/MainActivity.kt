@@ -11,6 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavView: BottomNavigationView
+    private var username: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("user_data", Context.MODE_PRIVATE)
         val isLoggedIn = sharedPref.getString("user_email", null) != null
+        username = sharedPref.getString("user_username", "User") // retrieve stored username
 
         if (isLoggedIn) {
             setContentView(R.layout.activity_main)
@@ -25,13 +27,25 @@ class MainActivity : AppCompatActivity() {
             bottomNavView = findViewById(R.id.bottom_navigation)
 
             if (savedInstanceState == null) {
-                replaceFragment(HomeFragment())
+                // Pass username to HomeFragment
+                val homeFragment = HomeFragment()
+                val bundle = Bundle()
+                bundle.putString("username", username)
+                homeFragment.arguments = bundle
+
+                replaceFragment(homeFragment)
                 bottomNavView.selectedItemId = R.id.nav_dashboard
             }
 
             bottomNavView.setOnItemSelectedListener {
                 when (it.itemId) {
-                    R.id.nav_dashboard -> replaceFragment(HomeFragment())
+                    R.id.nav_dashboard -> {
+                        val homeFragment = HomeFragment()
+                        val bundle = Bundle()
+                        bundle.putString("username", username)
+                        homeFragment.arguments = bundle
+                        replaceFragment(homeFragment)
+                    }
                     R.id.nav_study -> replaceFragment(StudyFragment())
                     R.id.nav_chat -> replaceFragment(AiFragment())
                     R.id.nav_scan -> replaceFragment(ScanFragment())

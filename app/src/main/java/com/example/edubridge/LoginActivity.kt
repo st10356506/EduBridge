@@ -22,8 +22,8 @@ class LoginActivity : AppCompatActivity() {
         val signUpTextView = findViewById<TextView>(R.id.sign_up_text_view)
 
         loginButton.setOnClickListener {
-            val email = emailEditText.text.toString()
-            val password = passwordEditText.text.toString()
+            val email = emailEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
 
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Email and password cannot be empty.", Toast.LENGTH_SHORT).show()
@@ -31,13 +31,18 @@ class LoginActivity : AppCompatActivity() {
             }
 
             val sharedPref = getSharedPreferences("user_data", Context.MODE_PRIVATE)
-            val savedEmail = sharedPref?.getString("user_email", "")
-            val savedPassword = sharedPref?.getString("user_password", "")
+            val savedEmail = sharedPref.getString("user_email", "")
+            val savedPassword = sharedPref.getString("user_password", "")
+            val savedUsername = sharedPref.getString("user_username", "") // ✅ get username
 
             val loginSuccessful = (email == savedEmail && password == savedPassword)
 
             if (loginSuccessful) {
+                Log.d("LoginActivity", "Login successful for email: $email")
+
+                // Pass username to MainActivity
                 val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("username", savedUsername) // ✅ send username
                 startActivity(intent)
                 finish()
             } else {
