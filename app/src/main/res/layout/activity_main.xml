@@ -145,15 +145,6 @@
                 android:textAllCaps="false" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/menu_settings"
-                style="@style/Widget.Material3.Button.TextButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="start|center_vertical"
-                android:text="⚙️ Settings"
-                android:textAllCaps="false" />
-
-            <com.google.android.material.button.MaterialButton
                 android:id="@+id/menu_parent_dashboard"
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="match_parent"

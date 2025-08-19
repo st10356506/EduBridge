@@ -1,6 +1,8 @@
 package com.example.edubridge
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -8,6 +10,8 @@ import com.example.edubridge.data.Lesson
 import com.example.edubridge.data.LessonDao
 import com.example.edubridge.fragments.StudyFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.card.MaterialCardView
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,6 +40,45 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_rewards -> replaceFragment(RewardsFragment())
             }
             true
+        }
+
+        // 🔹 Setup top-right menu dropdown
+        val menuButton: MaterialButton = findViewById(R.id.menu_button)
+        val menuDropdown: MaterialCardView = findViewById(R.id.menu_dropdown)
+        val menuOverlay: View = findViewById(R.id.menu_overlay)
+
+        val menuResourceCenter: MaterialButton = findViewById(R.id.menu_resource_center)
+        val menuParentDashboard: MaterialButton = findViewById(R.id.menu_parent_dashboard)
+        val menuHelp: MaterialButton = findViewById(R.id.menu_help)
+
+        fun setMenuVisible(visible: Boolean) {
+            menuDropdown.visibility = if (visible) View.VISIBLE else View.GONE
+            menuOverlay.visibility = if (visible) View.VISIBLE else View.GONE
+        }
+
+        menuButton.setOnClickListener {
+            val shouldShow = menuDropdown.visibility != View.VISIBLE
+            setMenuVisible(shouldShow)
+        }
+
+        menuOverlay.setOnClickListener {
+            setMenuVisible(false)
+        }
+
+        menuResourceCenter.setOnClickListener {
+            // Navigate to Study tab as Resource Center
+            bottomNavView.selectedItemId = R.id.nav_study
+            setMenuVisible(false)
+        }
+
+        menuParentDashboard.setOnClickListener {
+            replaceFragment(ParentDashboardFragment())
+            setMenuVisible(false)
+        }
+
+        menuHelp.setOnClickListener {
+            replaceFragment(HelpFragment())
+            setMenuVisible(false)
         }
 
         // 🔹 Populate sample lessons in Firebase (only run once, or remove after testing)
