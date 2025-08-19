@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="12dp"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardUseCompatPadding="true"
     app:cardElevation="4dp">
 
     <LinearLayout
@@ -20,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:text="📊"
-            android:textSize="32sp" />
+            android:textSize="28sp" />
 
         <!-- Badge Info -->
         <LinearLayout
@@ -36,8 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:gravity="center"
-                android:text="Math Master"
-                android:textSize="12sp"
+                android:text="Badge Name"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -45,9 +47,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Complete 10 math activities"
+                android:text="Badge description"
                 android:textColor="@color/muted_foreground"
-                android:textSize="10sp" />
+                android:textSize="11sp" />
         </LinearLayout>
 
         <!-- Badge Tags -->
@@ -65,8 +67,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:text="common"
-                android:textSize="8sp"
-                app:chipBackgroundColor="@color/gray_100" />
+                android:textSize="10sp"
+                app:chipBackgroundColor="@color/badge_common_bg"
+                android:textColor="@color/badge_common_text" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/badge_points"
@@ -74,7 +77,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100 pts"
-                android:textSize="8sp" />
+                android:textSize="10sp"
+                app:chipBackgroundColor="@color/reward_points_bg"
+                android:textColor="@color/reward_points_text" />
         </LinearLayout>
 
         <!-- Progress (for unearned badges) -->
@@ -89,19 +94,22 @@
                 android:id="@+id/badge_progress"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:layout_marginBottom="4dp"
+                android:layout_height="6dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="6dp"
                 android:max="100"
-                android:progress="64" />
+                android:progress="0"
+                android:progressBackgroundTint="@color/progress_track"
+                android:progressTint="@color/progress_indicator" />
 
             <TextView
                 android:id="@+id/badge_progress_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="32/50"
+                android:text="0/100"
                 android:textColor="@color/muted_foreground"
-                android:textSize="8sp" />
+                android:textSize="10sp" />
         </LinearLayout>
 
         <!-- Earned Trophy -->
