@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         val menuOverlay: View = findViewById(R.id.menu_overlay)
 
         val menuResourceCenter: MaterialButton = findViewById(R.id.menu_resource_center)
+        val menuUploadResource: MaterialButton = findViewById(R.id.menu_upload_resource)
         val menuParentDashboard: MaterialButton = findViewById(R.id.menu_parent_dashboard)
         val menuHelp: MaterialButton = findViewById(R.id.menu_help)
 
@@ -66,8 +67,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         menuResourceCenter.setOnClickListener {
-            // Navigate to Study tab as Resource Center
-            bottomNavView.selectedItemId = R.id.nav_study
+            // Open Study tab and show uploaded content section via ResourceCenterFragment
+            replaceFragment(StudyFragment())
+            setMenuVisible(false)
+        }
+
+        menuUploadResource.setOnClickListener {
+            replaceFragment(UploadResourceFragment())
             setMenuVisible(false)
         }
 

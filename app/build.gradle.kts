@@ -57,9 +57,10 @@ dependencies {
     implementation ("com.google.mlkit:text-recognition:16.0.0")
 
     // Firebase BoM
-    implementation (platform("com.google.firebase:firebase-bom:33.1.2"))
-    implementation ("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-database")
+    // Removed Storage dependency; using Realtime Database to store small files inline or links
 
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("androidx.fragment:fragment-ktx:1.8.2")

@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import android.content.Intent
+import android.net.Uri
 import com.example.edubridge.data.Lesson
 import com.example.edubridge.data.LessonDao
 import com.example.edubridge.databinding.FragmentAllSubjectsBinding
@@ -18,6 +20,7 @@ class AllSubjectsFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var adapter: StudyMaterialAdapter
+    private lateinit var localUploadsAdapter: LocalResourceAdapter
     private val lessonDao = LessonDao()
     private val viewModel: StudyViewModel by activityViewModels()
 
@@ -32,6 +35,7 @@ class AllSubjectsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
+        setupUploadsRecycler()
         fetchLessonsFromFirebase()
         
         // Observe the view model's study materials to get updates
@@ -66,6 +70,42 @@ class AllSubjectsFragment : Fragment() {
         binding.allSubjectsRecyclerView.adapter = adapter
     }
 
+    private fun setupUploadsRecycler() {
+        localUploadsAdapter = LocalResourceAdapter(
+            onOpen = { res ->
+                val file = java.io.File(res.path)
+                if (file.exists()) {
+                    val uri = androidx.core.content.FileProvider.getUriForFile(requireContext(), "${requireContext().packageName}.fileprovider", file)
+                    val intent = Intent(Intent.ACTION_VIEW).apply {
+                        setDataAndType(uri, res.mimeType)
+                        addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                    }
+                    startActivity(intent)
+                } else {
+                    android.widget.Toast.makeText(requireContext(), "File missing", android.widget.Toast.LENGTH_SHORT).show()
+                }
+            },
+            onDelete = { res ->
+                // Delete file and metadata
+                try { java.io.File(res.path).delete() } catch (_: Exception) {}
+                LocalResourceStore.remove(requireContext(), res.id)
+                // refresh list
+                val list = LocalResourceStore.getAll(requireContext()).sortedByDescending { it.timestamp }
+                localUploadsAdapter.submitList(list)
+                binding.uploadedSectionTitle.visibility = if (list.isEmpty()) View.GONE else View.VISIBLE
+                binding.uploadedEmpty.visibility = if (list.isEmpty()) View.VISIBLE else View.GONE
+            }
+        )
+        binding.uploadedResourcesRecycler.layoutManager = LinearLayoutManager(requireContext())
+        binding.uploadedResourcesRecycler.adapter = localUploadsAdapter
+
+        // Initial load
+        val list = LocalResourceStore.getAll(requireContext()).sortedByDescending { it.timestamp }
+        localUploadsAdapter.submitList(list)
+        binding.uploadedSectionTitle.visibility = if (list.isEmpty()) View.GONE else View.VISIBLE
+        binding.uploadedEmpty.visibility = if (list.isEmpty()) View.VISIBLE else View.GONE
+    }
+
     private fun fetchLessonsFromFirebase() {
         lessonDao.database.child("lessons").get().addOnSuccessListener { snapshot ->
             val materials = mutableListOf<StudyMaterial>()
@@ -90,6 +130,7 @@ class AllSubjectsFragment : Fragment() {
             e.printStackTrace() // optional: show a Toast for errors
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
