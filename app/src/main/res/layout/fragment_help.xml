@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:background="@color/gray_50">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="16dp">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Help &amp; Support"
+			android:textSize="20sp"
+			android:textStyle="bold"
+			android:textColor="@color/primary"
+			android:layout_marginBottom="12dp" />
+
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			app:cardCornerRadius="12dp"
+			app:cardElevation="2dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="16dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="FAQs"
+					android:textStyle="bold"
+					android:textColor="@color/black"
+					android:layout_marginBottom="8dp" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• How do I scan a problem?\nOpen the Scan tab and take a clear photo of the question."
+					android:textColor="@color/muted_foreground"
+					android:layout_marginBottom="8dp" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• How do I earn rewards?\nComplete lessons and streaks to earn points and badges."
+					android:textColor="@color/muted_foreground" />
+
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
+
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:cardCornerRadius="12dp"
+			app:cardElevation="2dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="16dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Contact Support"
+					android:textStyle="bold"
+					android:textColor="@color/black"
+					android:layout_marginBottom="8dp" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btn_email_support"
+					style="@style/Widget.Material3.Button.OutlinedButton"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Email us"
+					android:textAllCaps="false" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btn_open_help_center"
+					style="@style/Widget.Material3.Button.OutlinedButton"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					android:text="Open Help Center"
+					android:textAllCaps="false" />
+
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
+
+	</LinearLayout>
+
+</ScrollView>
+
+

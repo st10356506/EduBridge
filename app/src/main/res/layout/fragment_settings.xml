@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:background="@color/gray_50">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="16dp">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Settings"
+			android:textSize="20sp"
+			android:textStyle="bold"
+			android:textColor="@color/primary"
+			android:layout_marginBottom="12dp" />
+
+		<!-- Preferences -->
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			app:cardCornerRadius="12dp"
+			app:cardElevation="2dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="16dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Preferences"
+					android:textStyle="bold"
+					android:textColor="@color/black"
+					android:layout_marginBottom="8dp" />
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical"
+					android:orientation="horizontal"
+					android:paddingVertical="8dp">
+
+					<TextView
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="Enable notifications"
+						android:textColor="@color/black" />
+
+					<Switch
+						android:id="@+id/switch_notifications"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical"
+					android:orientation="horizontal"
+					android:paddingVertical="8dp">
+
+					<TextView
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="Study reminders"
+						android:textColor="@color/black" />
+
+					<Switch
+						android:id="@+id/switch_reminders"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical"
+					android:orientation="horizontal"
+					android:paddingVertical="8dp">
+
+					<TextView
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="App language"
+						android:textColor="@color/black" />
+
+					<Spinner
+						android:id="@+id/spinner_language"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:entries="@array/languages" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical"
+					android:orientation="horizontal"
+					android:paddingVertical="8dp">
+
+					<TextView
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="Dark mode"
+						android:textColor="@color/black" />
+
+					<Switch
+						android:id="@+id/switch_dark_mode"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content" />
+				</LinearLayout>
+
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
+
+		<!-- Data & Storage -->
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			app:cardCornerRadius="12dp"
+			app:cardElevation="2dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="16dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Data and Storage"
+					android:textStyle="bold"
+					android:textColor="@color/black"
+					android:layout_marginBottom="8dp" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btn_clear_cache"
+					style="@style/Widget.Material3.Button.OutlinedButton"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Clear cache"
+					android:textAllCaps="false" />
+
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
+
+		<!-- About -->
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:cardCornerRadius="12dp"
+			app:cardElevation="2dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="16dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="About"
+					android:textStyle="bold"
+					android:textColor="@color/black"
+					android:layout_marginBottom="8dp" />
+
+				<TextView
+					android:id="@+id/tv_version"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Version 1.0.0"
+					android:textColor="@color/muted_foreground" />
+
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
+
+	</LinearLayout>
+
+</ScrollView>
+
+

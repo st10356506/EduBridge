@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:background="@color/gray_50">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="16dp">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Parent / Teacher Dashboard"
+			android:textSize="20sp"
+			android:textStyle="bold"
+			android:textColor="@color/primary"
+			android:layout_marginBottom="12dp" />
+
+		<!-- Child progress card -->
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			app:cardCornerRadius="12dp"
+			app:cardElevation="2dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="16dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Weekly Progress"
+					android:textStyle="bold"
+					android:textColor="@color/black"
+					android:layout_marginBottom="8dp" />
+
+				<TextView
+					android:id="@+id/tv_child_name"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Student: Alex Johnson"
+					android:textColor="@color/muted_foreground"
+					android:layout_marginBottom="8dp" />
+
+				<ProgressBar
+					style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+					android:id="@+id/progress_weekly"
+					android:layout_width="match_parent"
+					android:layout_height="8dp"
+					android:max="100"
+					android:progress="60"
+					android:progressBackgroundTint="@color/gray_200"
+					android:progressTint="@color/green_600" />
+
+				<TextView
+					android:id="@+id/tv_progress_label"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="60% of weekly goal completed"
+					android:textColor="@color/muted_foreground"
+					android:layout_marginTop="8dp" />
+
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
+
+		<!-- Recent activity card -->
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			app:cardCornerRadius="12dp"
+			app:cardElevation="2dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="16dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Recent Activity"
+					android:textStyle="bold"
+					android:textColor="@color/black"
+					android:layout_marginBottom="8dp" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="• Completed: Introduction to Algebra"
+					android:textColor="@color/muted_foreground" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:text="• Quiz score: Photosynthesis - 8/10"
+					android:textColor="@color/muted_foreground" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:text="• Streak: 5 days"
+					android:textColor="@color/muted_foreground" />
+
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
+
+		<!-- Controls card -->
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:cardCornerRadius="12dp"
+			app:cardElevation="2dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="16dp">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Controls"
+					android:textStyle="bold"
+					android:textColor="@color/black"
+					android:layout_marginBottom="8dp" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btn_view_reports"
+					style="@style/Widget.Material3.Button.OutlinedButton"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="View detailed reports"
+					android:textAllCaps="false" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btn_set_goals"
+					style="@style/Widget.Material3.Button.OutlinedButton"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					android:text="Set study goals"
+					android:textAllCaps="false" />
+
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
+
+	</LinearLayout>
+
+</ScrollView>
+
+
