@@ -5,6 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.edubridge.AllSubjectsFragment
+import com.example.edubridge.RecentFragment
+import com.example.edubridge.SavedFragment
 import com.example.edubridge.ViewPagerAdapter
 import com.example.edubridge.databinding.FragmentStudyMaterialsBinding
 import com.google.android.material.tabs.TabLayoutMediator
@@ -32,7 +36,6 @@ class StudyFragment : Fragment() {
         val adapter = ViewPagerAdapter(this, tabTitles.size)
         binding.viewPager.adapter = adapter
 
-        // This is a common point of failure. Ensure both viewPager and tabLayout are not null.
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = tabTitles[position]
         }.attach()
@@ -42,5 +45,7 @@ class StudyFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }
+
+
+
